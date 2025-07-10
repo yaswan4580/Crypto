@@ -4,6 +4,7 @@
     {
         public string[] message { get; set; }
         public string code { get; set; }
+        public Error() { }
 
         public string status { get; set; }
     }
