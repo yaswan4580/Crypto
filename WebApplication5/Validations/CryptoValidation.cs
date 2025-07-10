@@ -16,12 +16,12 @@ namespace WebApplication5.Validations
 
             RuleFor(c => c.Cid)
                 .NotEmpty().WithMessage("Id is required.")
-                .Length(1, 50).WithMessage("Id must be between 1 and 50 characters.");
-                //.MustAsync(async (cid, cancellation) =>
-                //{
-                //    var existingCrypto = await _context.Crypto.AnyAsync(a => a.Cid == cid, cancellation);
-                //    return !existingCrypto;
-                //}).WithMessage("Id must be unique.");
+                .Length(1, 50).WithMessage("Id must be between 1 and 50 characters.")
+            .MustAsync(async (cid, cancellation) =>
+            {
+                var existingcrypto = await _context.Crypto.AnyAsync(a => a.Cid == cid, cancellation);
+                return !existingcrypto;
+            }).WithMessage("id must be unique.");
 
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("Name is required.")
