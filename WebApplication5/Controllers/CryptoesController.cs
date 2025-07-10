@@ -101,10 +101,6 @@ namespace WebApplication5.Controllers
 
             //        );
             //}
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
             _context.Crypto.Add(crypto);
             try
             {
