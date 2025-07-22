@@ -17,7 +17,7 @@ namespace WebApplication5.Controllers
     {
         private readonly WebApplication5Context _context;
         private readonly CryptoValidation _validator;
-        public CryptoesController(WebApplication5Context context,CryptoValidation validator)
+        public CryptoesController(WebApplication5Context context, CryptoValidation validator)
         {
             _context = context;
             _validator = validator;
@@ -27,7 +27,7 @@ namespace WebApplication5.Controllers
         public async Task<ActionResult<IEnumerable<Crypto>>> GetSortedCryptos()
         {
             var cryptoes = await _context.Crypto
-                                         .OrderBy(c => c.Name) 
+                                         .OrderBy(c => c.Name)
                                          .ToListAsync();
             return Ok(cryptoes);
         }
@@ -99,8 +99,8 @@ namespace WebApplication5.Controllers
             //        ]
             //    }
 
-                    );
-            }
+            //        );
+            //}
             _context.Crypto.Add(crypto);
             try
             {
