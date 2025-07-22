@@ -89,17 +89,15 @@ namespace WebApplication5.Controllers
         [HttpPost]
         public async Task<ActionResult<Crypto>> PostCrypto(Crypto crypto)
         {
-            var data = await _validator.ValidateAsync(crypto);
-            if (data.Errors.Count > 0)
-            {
-                return BadRequest(new Error
-                {
-                    message = [
-                        "Validation failed",
-                        string.Join(", ", data.Errors.Select(e => e.ErrorMessage))
-                    ]
-
-                }
+            //var data =await _validator.ValidateAsync(crypto);
+            //if(data.Errors.Count > 0){
+            //    return BadRequest(new Error
+            //    {
+            //        message = [
+            //            "Validation failed",
+            //            string.Join(", ", data.Errors.Select(e => e.ErrorMessage))
+            //        ]
+            //    }
 
                     );
             }
